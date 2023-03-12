@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('vcs') {
             steps {
-                git branch: 'develop',
+                git branch: 'rel_1_sprint',
                     url: 'https://github.com/satya36-cpu/StudentCoursesRestAPI.git'
             }
         }
