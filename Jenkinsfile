@@ -21,5 +21,13 @@ pipeline {
                 sh 'docker image push satyabrata36/spc2:latest'
             }
         }
+        stage('deploy to st') {
+            steps {
+                sh 'kubectl apply -f ./k8s/flaskaws.yml'
+                sh 'kubectl apply -f ./k8s/mysql.yml'
+                sh 'sleep 10 s'
+                sh 'kubectl get svc'
+            } 
+        }       
     }
 }        
